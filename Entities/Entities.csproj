@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A8D93E9-C428-42E5-AF0D-1D0CC116971B}</ProjectGuid>
+    <ProjectGuid>{8738B80C-3486-4A52-8A55-0D9A51132F90}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,77 +48,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Context\Category.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Category.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\Customer.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Customer.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\CustomerDemographic.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="CustomerDemographic.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\Employee.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Employee.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\NorthData.Context.cs">
+    <Compile Include="North.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthData.Context.tt</DependentUpon>
+      <DependentUpon>North.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\NorthData.cs">
+    <Compile Include="North.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthData.tt</DependentUpon>
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\NorthData.Designer.cs">
+    <Compile Include="North.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthData.edmx</DependentUpon>
+      <DependentUpon>North.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Context\Order.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Order.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\Order_Detail.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Order_Detail.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\Product.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Context\Region.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Context\Shipper.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Context\Supplier.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Context\Territory.cs">
-      <DependentUpon>NorthData.tt</DependentUpon>
+    <Compile Include="Product.cs">
+      <DependentUpon>North.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region.cs">
+      <DependentUpon>North.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>North.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>North.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Territory.cs">
+      <DependentUpon>North.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Context\NorthData.edmx">
+    <EntityDeploy Include="North.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NorthData.Designer.cs</LastGenOutput>
+      <LastGenOutput>North.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Context\NorthData.Context.tt">
+    <None Include="North.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthData.edmx</DependentUpon>
-      <LastGenOutput>NorthData.Context.cs</LastGenOutput>
+      <DependentUpon>North.edmx</DependentUpon>
+      <LastGenOutput>North.Context.cs</LastGenOutput>
     </None>
-    <None Include="Context\NorthData.edmx.diagram">
-      <DependentUpon>NorthData.edmx</DependentUpon>
+    <None Include="North.edmx.diagram">
+      <DependentUpon>North.edmx</DependentUpon>
     </None>
-    <None Include="Context\NorthData.tt">
+    <None Include="North.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthData.edmx</DependentUpon>
-      <LastGenOutput>NorthData.cs</LastGenOutput>
+      <DependentUpon>North.edmx</DependentUpon>
+      <LastGenOutput>North.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
