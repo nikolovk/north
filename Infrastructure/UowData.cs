@@ -1,4 +1,4 @@
-﻿using Entities;
+﻿using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +9,15 @@ namespace Infrastructure
 {
     public class UowData : IUowData
     {
-        private readonly NorthwindEntities context;
+        private readonly NorthContext context;
         private readonly Dictionary<Type, object> repositories = new Dictionary<Type, object>();
 
         public UowData()
-            : this(new NorthwindEntities())
+            : this(new NorthContext())
         {
         }
 
-        public UowData(NorthwindEntities context)
+        public UowData(NorthContext context)
         {
             this.context = context;
         }

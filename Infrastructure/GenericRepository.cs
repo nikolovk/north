@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,11 +13,11 @@ namespace Infrastructure
     public class GenericRepository<T> : IRepository<T> where T : class
     {
         public GenericRepository()
-            : this(new NorthwindEntities())
+            : this(new NorthContext())
         {
         }
 
-        public GenericRepository(NorthwindEntities context)
+        public GenericRepository(NorthContext context)
         {
             if (context == null)
             {
