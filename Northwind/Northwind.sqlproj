@@ -101,5 +101,6 @@
     <Build Include="dbo\Stored Procedures\CustOrdersOrders.sql" />
     <Build Include="dbo\Stored Procedures\CustOrderHist.sql" />
     <Build Include="dbo\Stored Procedures\SalesByCategory.sql" />
+    <Build Include="dbo\SetPassword.sql" />
   </ItemGroup>
 </Project>

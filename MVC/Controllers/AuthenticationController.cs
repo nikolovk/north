@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-using MVC.Models;
+using Models.Accounts;
+using Services.Accounts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,13 @@ namespace MVC.Controllers
 {
     public class AuthenticationController : Controller
     {
+        private IAccountsService accountsService;
+
+        public AuthenticationController(IAccountsService accountsService)
+        {
+            this.accountsService = accountsService;
+        }
+
         IAuthenticationManager Authentication
         {
             get { return HttpContext.GetOwinContext().Authentication; }
@@ -29,7 +37,7 @@ namespace MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (input.HasValidUsernameAndPassword)
+                if (this.accountsService.GetByNameAndPassword(input) != null)
                 {
                     var identity = new ClaimsIdentity(new[] {
                             new Claim(ClaimTypes.Name, input.Username),
@@ -51,9 +59,10 @@ namespace MVC.Controllers
                 }
             }
 
-            return View("show", input);
+            return View("login", input);
         }
 
+        [HttpGet]
         public ActionResult Logout()
         {
             Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

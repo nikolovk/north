@@ -21,7 +21,7 @@ namespace Services.Accounts
         public Employee GetByNameAndPassword(LoginModel loginModel)
         {
             Employee user = this.uowData.Employees.All()
-                .Where(e => e.LastName == loginModel.LastName && e.Password == loginModel.Password).FirstOrDefault();
+                .Where(e => e.LastName == loginModel.Username && e.Password == loginModel.Password).FirstOrDefault();
 
             return user;
         }

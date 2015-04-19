@@ -5,7 +5,7 @@ namespace Entities.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class NorthContext : DbContext
+    public partial class NorthContext : DbContext, Entities.Models.INorthContext
     {
         public NorthContext()
             : base("name=NorthContext")
