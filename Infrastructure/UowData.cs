@@ -44,6 +44,21 @@ namespace Infrastructure
             this.context.Dispose();
         }
 
+        public IRepository<Category> Categories
+        {
+            get { return this.GetRepository<Category>(); }
+        }
+
+        public IRepository<Supplier> Suppliers
+        {
+            get { return this.GetRepository<Supplier>(); }
+        }
+
+        public IRepository<Product> Products
+        {
+            get { return this.GetRepository<Product>(); }
+        }
+
         public IRepository<Employee> Employees
         {
             get { return this.GetRepository<Employee>(); }

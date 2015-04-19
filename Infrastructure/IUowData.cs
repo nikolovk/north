@@ -12,6 +12,12 @@ namespace Infrastructure
     {
         IRepository<Employee> Employees { get; }
 
+        IRepository<Product> Products { get; }
+
+        IRepository<Category> Categories { get; }
+
+        IRepository<Supplier> Suppliers { get; }
+
         int SaveChanges();
     }
 }

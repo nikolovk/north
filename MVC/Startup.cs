@@ -5,6 +5,9 @@ using Infrastructure;
 using Microsoft.Owin;
 using Owin;
 using Services.Accounts;
+using Services.Categories;
+using Services.Products;
+using Services.Suppliers;
 using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(MVC.Startup))]
@@ -23,6 +26,10 @@ namespace MVC
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             builder.RegisterType<AccountsService>().As<IAccountsService>();
+            builder.RegisterType<ProductsService>().As<IProductsService>();
+            builder.RegisterType<CategoriesService>().As<ICategoriesService>();
+            builder.RegisterType<SuppliersService>().As<ISuppliersService>();
+            
             builder.RegisterType(typeof(NorthContext)).As(typeof(INorthContext)).InstancePerLifetimeScope();
             builder.RegisterType(typeof(UowData)).As(typeof(IUowData)); 
 
